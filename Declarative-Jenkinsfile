@@ -6,7 +6,7 @@ pipeline{
         DOCKER_TAG = getDockerTag()
     }
     stages{
-        stage('Build Docker Image'){
+        stage('Build Docker Image '){
             steps{
                 sh "docker build . -t suman11411/nodeapp:${DOCKER_TAG}"
             }
