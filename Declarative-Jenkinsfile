@@ -11,7 +11,7 @@ pipeline{
                 sh "docker build . -t suman11411/nodeapp:${DOCKER_TAG}"
             }
         }
-        stage('Push To DockerHub'){
+        stage('Push To DockerHub '){
             steps{
             withCredentials([string(credentialsId: 'DockerHubPwd1', variable: 'DockerHubPwd1')]) {
             sh "docker login -u Suman11411 -p ${DockerHubPwd1}"
