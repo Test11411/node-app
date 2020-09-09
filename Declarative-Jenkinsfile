@@ -15,7 +15,7 @@ pipeline{
             steps{
             withCredentials([string(credentialsId: 'DockerHubPWD', variable: 'Dockerhub-password')]) {
             echo "Hello World 11 !"
-            sh "docker login -u Suman11411 -p ${Dockerhub-password}"
+            sh "docker login -u suman11411 -p ${Dockerhub-password}"
             echo "Hello World 22!"
             sh "docker push Suman11411/nodeapp:${DOCKER_TAG}"
             echo "Hello World 33 !"
