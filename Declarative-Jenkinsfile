@@ -12,10 +12,12 @@ pipeline{
             }
         }
         stage('Push To DockerHub'){
+            steps{
             withCredentials([string(credentialsId: 'DockerHubPwd1', variable: 'DockerHubPwd1')]) {
             sh "docker login -u Suman11411 -p ${DockerHubPwd1}"
             sh "docker push Suman11411/nodeapp:${DOCKER_TAG}"
         }
+      }
     }
   }
 }
