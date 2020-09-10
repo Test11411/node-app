@@ -18,7 +18,7 @@ pipeline{
             echo "Hello World 22!"
             sh "docker push suman11411/nodeapp:${DOCKER_TAG}"
             echo "Hello World 33 !"
-        }
+        
       }
     }
   }
