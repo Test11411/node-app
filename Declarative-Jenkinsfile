@@ -8,15 +8,16 @@ pipeline{
     stages{
         stage('Build Docker Image1 '){
             steps{
-                sh "docker build . -t suman46990/nodeapp:${DOCKER_TAG}"
+                sh "docker build . -t suman11411/nodeapp:${DOCKER_TAG}"
             }
         }
         stage('Push To DockerHub '){
             steps{
+            withCredentials([usernameColonPassword(credentialsId: 'Dockerpwd', variable: 'Docker_user')]) {
             echo "Hello World 11 !"
-            sh "docker login -u suman46990 --password-stdin Ravi&1990"
+            sh "docker login -u suman11411 --password-stdin ${Docker_user}"
             echo "Hello World 22!"
-            sh "docker push suman46990/nodeapp:${DOCKER_TAG}"
+            sh "docker push suman11411/nodeapp:${DOCKER_TAG}"
             echo "Hello World 33 !"
         
       }
