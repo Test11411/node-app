@@ -17,12 +17,12 @@ pipeline{
                 }
             steps{
             sh "echo 'my Dockerhub is password is $DOCKER_token '"
-            withCredentials([string(credentialsId: 'docpass', variable: 'docpass_var')]) {
+ //           withCredentials([string(credentialsId: 'docpass', variable: 'docpass_var')]) {
             echo "Hello World 11 !"
-  //          sh "cat ~/my_password.txt | docker login --username suman11411 --password-stdin"
+  //          sh "cat ~/my_password.txt | docker login --username suman11411 -p $DOCKER_token"
  //           sh "echo "$MY_PASSWORD" | docker login --username suman11411 --password-stdin"
  //           sh "echo | set /p="my_password" | docker login --username suman11411 --password-stdin"
-  //          sh "docker login -u suman11411 -p $docpass_var"
+              sh "docker login -u suman11411 -p $DOCKER_token"
             echo "Hello World 22!"
             sh "docker push suman11411/nodeapp:${DOCKER_TAG}"
             echo "Hello World 33 !"
