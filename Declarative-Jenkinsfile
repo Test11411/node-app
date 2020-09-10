@@ -13,9 +13,8 @@ pipeline{
         }
         stage('Push To DockerHub '){
             steps{
-            withCredentials([string(credentialsId: 'Docker11', variable: 'Docker11')]) {
             echo "Hello World 11 !"
-            sh "docker login -u suman11411 -p ${Docker11}"
+            sh "docker login -u suman11411 -p R$uman77"
             echo "Hello World 22!"
             sh "docker push suman11411/nodeapp:${DOCKER_TAG}"
             echo "Hello World 33 !"
